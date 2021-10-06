@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Arithmetic Operations
+    </title>
+
+</head>
+
+<body>
+
+    <h2>Computes by shiva prasad reddy adumala</h2>
+    <form>
+        <div class="form-group" style="width: 30%;">
+            <label for="form1_base" class="from-lable">Enter a base</label>
+            <input type="number" class="form-control" id="baseId" name="form1_base" value=10>
+        </div>
+        <div class="form-group" style="width: 30%;">
+            <label for="form1_exponent" class="from-lable">Enter an exponent </label>
+            <input type="text" class="form-control" id="exponentId" name="form1_exponent" value=2>
+        </div>
+        <input type="button" onclick="powers()" value="Compute">
+    </form>
+
+
+    <p id="result">This text will be replaced </p>
+    <br><br>
+    <form>
+        <div class="form-check">
+            <input type="radio" id="radiogrp_plus" name="operators" value="plus" onclick="processRadio()">
+            <label for="rg1_plus" class="form-check-label">+</label>
+        </div>
+
+        <div class="form-check">
+            <input type="radio" id="radiogrp_minus" name="operators" value="minus" onclick="processRadio()">
+            <label for="rg1_minus" class="form-check-label">-</label>
+        </div>
+
+        <div class="form-check">
+            <input type="radio" id="radiogrp_times" name="operators" value="times" onclick="processRadio()">
+            <label for="rg1_times" class="form-check-label">*</label>
+        </div>
+
+        <div class="form-check">
+            <input type="radio" id="radiogrp_divide  " name="operators" value="divide" onclick="processRadio()">
+            <label for="rg1_divide" class="form-check-label">/</label>
+        </div>
+        <br>
+        <br>
+        <p id="aValues">This text will be replaced </p>
+        <br>
+
+        <script>
+
+            function powers() {
+                baseVal = document.getElementById("baseId").value
+                exponentVal = document.getElementById("exponentId").value
+                string = ""
+                for (i = 1; i <= exponentVal; i++) {
+                    total = Math.pow(baseVal, i);
+
+                    string += total + " ";
+                }
+                document.getElementById("result").innerHTML = "Powers of " + baseVal + " are: " + string
+            }
+            function processRadio() {
+                console.log("=====Inside Proceess radio=======")
+                baseVal = document.getElementById("baseId").value
+                exponentVal = document.getElementById("exponentId").value
+                arithmeticOperation = document.getElementsByName("operators")
+                operand = ""
+                for (i = 0; i < arithmeticOperation.length; i++) {
+                    if (arithmeticOperation[i].checked) {
+                        operand = arithmeticOperation[i].value
+                    }
+                }
+                var temp = 0
+                switch (operand) {
+                    case "plus":
+                        temp = parseInt(baseVal) + parseInt(exponentVal);
+                        break;
+                    case "minus":
+                        temp = baseVal - exponentVal;
+                        break;
+                    case "times":
+                        temp = baseVal * exponentVal;
+                        break;
+                    case "divide":
+                        temp = baseVal / exponentVal;
+                        break;
+                }
+
+                document.getElementById("aValues").innerHTML = "Values of " + baseVal + " " + operand + " " + exponentVal + ": " + temp
+            }
+
+
+
+        </script>
+
+</body>
+
+</html>
