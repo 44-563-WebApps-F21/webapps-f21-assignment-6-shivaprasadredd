@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome Java Script and DOM</title>
+</head>
+
+<body>
+    <h1>Pass phrase by shiva prasad Reddy </h1>
+
+    <form>
+        <label for="secretphrase">Enter the secret phrase </label>
+        <input type="password" id="s_phrase" name="secretphrase" value="Let me in"> <br>
+        <label for="checkphrase">Enter a phrase</label>
+        <input type="text" id="c_phrase" name="checkphrase" autofocus> <br>
+        <br>
+        <input type="button" onclick="processPhrase()" value="Check the phrase">
+    </form>
+    <div class="container">
+        <img src="Dog.jpg" class="img-thumbnail" alt="Dog" onclick="newImage();" id="img"
+            style="width: 200px; height: 200px;">
+    </div>
+        <p id="result">Attempts display here </p>
+    <script>
+        var correct = 0, wrong = 0, count=0;
+        function processPhrase() {
+
+            secretphrase = document.getElementById("s_phrase").value
+            checkphrase = document.getElementById("c_phrase").value
+            if (secretphrase == checkphrase) {
+                correct = correct + 1;
+                document.getElementById("result").innerHTML = "Correct count " + correct;
+                alert("access allowed");
+            } else {
+
+                wrong = wrong + 1;
+                document.getElementById("result").innerHTML = "Wrong count " + wrong;
+                alert("access denied");
+            }
+        }
+         function newImage() {
+            switch (count) {
+                case 0:
+                    document.getElementById("img").src = "Ant.jpg"
+                    count = count + 1
+                    break;
+                case 1:
+                    document.getElementById("img").src = "ulysses.jpg"
+                    count = count + 1
+                    break;
+                case 2:
+                    document.getElementById("img").src = "lion.jpg"
+                    count = 0
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
