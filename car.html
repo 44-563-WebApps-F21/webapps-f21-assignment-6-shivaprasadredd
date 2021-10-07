@@ -5,6 +5,10 @@
     <title>
         Car
     </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -28,7 +32,7 @@
             <label for="cb1_onion">gps</label>
         </div>
         <br>
-        <input type="button" onclick="orderCar()" value="Order a car">
+        <input type="button" class="btn btn-success" onclick="orderCar()" value="Order a car">
     </form>
     <br>
     <form>
@@ -41,7 +45,7 @@
             <input type="text" id="value" name="value">
         </div>
 
-        <input type="button" onclick="updateCar()" value="Update the car">
+        <input type="button" class="btn btn-success" onclick="updateCar()" value="Update the car">
     </form>
     <br>
     <p id="carType">This text will be replaced </p>
